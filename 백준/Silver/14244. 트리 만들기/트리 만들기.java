@@ -11,18 +11,18 @@ public class Main {
         int n = Integer.parseInt(st.nextToken()); // 노드 개수
         int m = Integer.parseInt(st.nextToken()); // 간선 개수
 
-        int count = 0; // 현재 사용한 간선 개수
-        int node = 0;  // 마지막으로 연결된 노드
+        int currentEdgeCnt = 0; // 현재 사용한 간선 개수
+        int lastNode = 0;  // 마지막으로 연결된 노드
 
         // 루트(0)에서 M개의 자식 노드를 만듦
         for (int i = 1; i < n; i++) {
-            if (count < m) { 
+            if (currentEdgeCnt < m) { 
                 sb.append("0 ").append(i).append("\n"); // 루트 노드(0)와 연결
-                count++;
+                currentEdgeCnt++;
             } else {
-                sb.append(node).append(" ").append(i).append("\n"); // 나머지는 직렬 연결
+                sb.append(lastNode).append(" ").append(i).append("\n"); // 간선 추가 (부모 -> 자식)
             }
-            node = i;
+            lastNode = i; // 다음 노드를 부모로 설정
         }
 
         System.out.print(sb);
