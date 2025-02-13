@@ -4,7 +4,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder(); // 출력 최적화
 
         // 테스트 케이스 개수 입력
         int T = Integer.parseInt(br.readLine());
@@ -20,11 +20,11 @@ public class Main {
             }
 
             // 모든 국가를 여행하는 최소 비행기 수는 항상 N-1
-            bw.write((N - 1) + "\n");
+            sb.append(N - 1).append("\n");
         }
 
-        bw.flush();
-        bw.close();
+        // 결과 한 번에 출력
+        System.out.print(sb.toString());
         br.close();
     }
 }
