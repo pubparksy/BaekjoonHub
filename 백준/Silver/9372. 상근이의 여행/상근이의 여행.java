@@ -9,7 +9,7 @@ public class Main {
         // 테스트 케이스 개수 입력
         int T = Integer.parseInt(br.readLine());
 
-        while (T-- > 0) {
+        for (int t = 0; t < T; t++) { // 테스트 케이스 반복
             StringTokenizer st = new StringTokenizer(br.readLine());
             int N = Integer.parseInt(st.nextToken()); // 국가 수
             int M = Integer.parseInt(st.nextToken()); // 비행기 수
